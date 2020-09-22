@@ -1,2 +1,2 @@
-settings = {'token': 'ddfdfgf','bot': 'Великий Бот','id': 754245037805797435,'prefix': '!'
+settings = {'token': 'ddfdfgf','bot': 'Великий Бот','id': ,'prefix': 757919225561219123, 'g'
 }
