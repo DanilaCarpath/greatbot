@@ -6,80 +6,57 @@ from discord.ext.commands import has_permissions, MissingPermissions
 
 bot = commands.Bot(command_prefix = settings['prefix'])
 
-# @bot.command() 
-# async def хелп(ctx):
+@bot.command()
+async def c (ctx, _message):
 
-#     helpEmbed = discord.Embed ()
-#     helpEmbed.add_field (name = "вебхук", value = "Создает вебхук. !вебхук \"заголовок\" \"текст\" айди_канала", inline = False)
-    
-#     await ctx.send (embed = helpEmbed)
+    newmessage = "[" + ctx.author.name + "] " + _message
 
-#команда бота
-@bot.command() 
-@has_permissions(administrator = True)
-async def вебхук(ctx, head, body, theid):
+    for k in bot.guilds:
+        if k != ctx.guild:
+            try:
+                channel = discord.utils.get (k.channels, name = "international")
+                await channel.send (newmessage)
+            except:
+                continue    
 
-    theid = int(theid)
+@bot.event
+async def on_message(message):
 
-    webhook = discord.Embed ()
-    webhook.add_field (name = head, value = body, inline = False)
+    #временный сервер для проверки канала
+    tempguild = message.author.guild
 
-    channel = ctx.guild.get_channel (theid)
+    #канал для проверки
+    checkchannel = discord.utils.get (tempguild.channels, name = "international")
 
-    await channel.send (embed = webhook)
+    #проверка на соотствие канала, где написали и нужного канала
+    if message.channel == checkchannel:
 
-# @bot.command() 
-# @has_permissions(administrator = True)
-# async def роль(ctx):
-
-#     await ctx.message.delete ()
-
-#     role1 = discord.utils.get(ctx.guild.roles, name = "титул")
-#     role2 = discord.utils.get(ctx.guild.roles, name = "осн")
-#     role3 = discord.utils.get(ctx.guild.roles, name = "цвет")
-
-#     rolelist = [role1, role2, role3]
-
-#     for i in ctx.guild.members:
+        #проверка на бота
+        if message.author.bot:
+            print ("бот")
         
-#         for k in rolelist:
+        #если автор - не бот
+        else:
 
-#             await i.add_roles (k)
+            #сообщение с упоминанием автора
+            newmessage = '{0.author}: {0.content}'.format(message)
 
-@bot.command()
-async def ник(ctx, new_nick):
+            #цикл на все сервера
+            for k in bot.guilds:
 
-    
+                #канал, в который отправим
+                channel = discord.utils.get (k.channels, name = "international")
 
-    emb = discord.Embed ()
-    emb.add_field (name = "Ник пользователя " + ctx.author.name + " изменен", value = "Новый никнейм: " + new_nick)
-    
-    await ctx.message.delete ()
+                #проверка, чтобы не отправлялось на сервер автора
+                if k != message.guild:
 
-    await ctx.send (embed = emb)
-    
-    await ctx.author.edit (nick = new_nick)
+                    #проверка на наличие канала
+                    try:
 
-@bot.command()
-@has_permissions(administrator = True)
-async def никюзер(ctx, member: discord.Member, new_nick):
+                        #отправка сообщения
+                        await channel.send (newmessage)
+                    except:
+                        continue
 
-    
-
-    emb = discord.Embed ()
-    emb.add_field (name = "Ник пользователя " + member.name + " изменен", value = "Новый никнейм: " + new_nick)
-    
-    await ctx.message.delete ()
-
-    await ctx.send (embed = emb)
-    
-    await member.edit (nick = new_nick)
-
-    
-
-#запуск бота
 token = os.environ.get('BOT_TOKEN')
-bot.run (token)
-
-
-# bot.run (settings['token'])
+bot.run (str(token))
