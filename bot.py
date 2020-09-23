@@ -53,7 +53,7 @@ async def on_message(message):
 
             embed = discord.Embed (color=0x6600ff)
             embed.set_author(name= messageAuthor, icon_url = avatar)
-            embed.add_field (name = messageContent, value = message.author.guild, inline = True)
+            embed.add_field (name = messageContent, value = message.author.guild, inline = False)
 
             
 
