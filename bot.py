@@ -9,7 +9,7 @@ bot = commands.Bot(command_prefix = settings['prefix'])
 @bot.command() 
 async def акси(ctx):
 
-    await ctx.send ("[Макси] сосет хуй")    
+    await ctx.send ("Макси сосет хуй")    
 
 @bot.event
 async def on_message(message):
