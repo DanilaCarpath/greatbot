@@ -51,10 +51,9 @@ async def on_message(message):
         
             await message.delete ()
 
-            embed = discord.Embed (color=0x6600ff)
+            embed = discord.Embed (color=0x6600ff, description = messageContent )
             embed.set_author(name= messageAuthor, icon_url = avatar)
-            embed.add_field (name = messageContent, value = message.author.guild, inline = False)
-
+        
             
 
             #цикл на все сервера
