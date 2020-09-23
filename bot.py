@@ -9,20 +9,7 @@ bot = commands.Bot(command_prefix = settings['prefix'])
 @bot.command() 
 async def акси(ctx):
 
-    await ctx.send ("[Макси] сосет хуй")
-
-@bot.command()
-async def c (ctx, _message):
-
-    newmessage = "[" + ctx.author.name + "] " + _message
-
-    for k in bot.guilds:
-        if k != ctx.guild:
-            try:
-                channel = discord.utils.get (k.channels, name = "international")
-                await channel.send (newmessage)
-            except:
-                continue    
+    await ctx.send ("[Макси] сосет хуй")    
 
 @bot.event
 async def on_message(message):
