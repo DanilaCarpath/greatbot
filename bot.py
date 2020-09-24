@@ -9,7 +9,7 @@ bot = commands.Bot(command_prefix = settings['prefix'])
 @bot.event
 async def on_message(message):
 
-    maxis = ["Макси", "макси", "макся", "Максимилиана", "максимиллиана"]
+    maxis = ["Макси", "макси", "макся", "Максимилиана", "максимиллиана", "МАКС", "Макся"]
     
     if message.author.bot:
         print ("bot")
