@@ -6,13 +6,11 @@ from discord.ext.commands import has_permissions, MissingPermissions
 
 bot = commands.Bot(command_prefix = settings['prefix'])
 
-@bot.command() 
-async def акси(ctx):
-
-    await ctx.send ("Макси сосет хуй")    
-
 @bot.event
 async def on_message(message):
+
+    if message.content == "Макси":
+        await ctx.send ("Макси сосет хуй")
 
     
 
