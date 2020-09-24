@@ -10,9 +10,10 @@ bot = commands.Bot(command_prefix = settings['prefix'])
 async def on_message(message):
 
     maxis = ["Макси", "макси", "макся", "Максимилиана", "максимиллиана"]
-
-    if maxis in message.content:
-        await message.channel.send ("Макси сосет хуй")
+    
+    for i in maxis:
+        if maxis i message.content:
+            await message.channel.send ("Макси сосет хуй")
 
     
 
