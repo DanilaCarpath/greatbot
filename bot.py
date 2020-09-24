@@ -11,9 +11,12 @@ async def on_message(message):
 
     maxis = ["Макси", "макси", "макся", "Максимилиана", "максимиллиана"]
     
-    for i in maxis:
-        if i in message.content:
-            await message.channel.send ("Макси сосет хуй")
+    if message.author.bot:
+        print ("bot")
+    else:
+        for i in maxis:
+            if i in message.content:
+                await message.channel.send ("Макси сосет хуй")
 
     
 
