@@ -20,13 +20,14 @@ async def on_message(message):
     
     messcont = message.content
     messcontlowered = messcont.lower ()
+    
     i_comm = ["комм", "соц", "маркс", "ленин", "сталин"]
     
     if message.author.bot:
         print ("bot")
     else:
         for i in i_comm:
-            if i in message.content:
+            if i in messcontlowered:
                 randcount = random.randint (1, 3)
                 
                 if randcount == 1:
