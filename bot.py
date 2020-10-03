@@ -15,7 +15,7 @@ async def on_message(message):
         if message.author.bot:
             print ("bot")
         else:
-            message.channel.send (message.author.mention, " лох ты а не коммунист")
+            message.channel.send (message.author.mention + " лох ты а не коммунист")
 
     maxis = ["Макси", "макси", "макся", "Максимилиана", "максимиллиана", "МАКС", "Макся"]
     
