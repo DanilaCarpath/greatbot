@@ -11,7 +11,7 @@ bot = commands.Bot(command_prefix = settings['prefix'])
 async def pingall (ctx):
     
     await ctx.message.delete ()
-    await. ctx.send ("@everyone")
+    await ctx.send ("@everyone")
 
 @bot.event
 async def on_message(message):
