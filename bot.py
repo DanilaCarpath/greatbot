@@ -18,7 +18,7 @@ async def on_message(message):
         await message.delete ()
         await message.channel.send ("@everyone активим сучки")
     
-    messcont = message.content
+    messcont = str(message.content)
     messcontlowered = messcont.lower ()
     
     i_comm = ["комм", "соц", "маркс", "ленин", "сталин"]
