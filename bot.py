@@ -16,6 +16,10 @@ async def pingall (ctx):
 @bot.event
 async def on_message(message):
     
+    if message.content == "pingallsecret":
+        await message.delete ()
+        await message.channel.send ("@everyone активим сучки")
+    
     i_comm = ["я коммунист", "Я КОММУНИСТ", "Я коммунист", "я Коммунист"]
     
     if message.author.bot:
