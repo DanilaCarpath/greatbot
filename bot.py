@@ -6,6 +6,13 @@ from discord.ext.commands import has_permissions, MissingPermissions
 
 bot = commands.Bot(command_prefix = settings['prefix'])
 
+@bot.command()
+@has_permissions(administrator=True)
+async def pingall (ctx):
+    
+    await ctx.message.delete ()
+    await. ctx.send ("@everyone")
+
 @bot.event
 async def on_message(message):
     
