@@ -8,6 +8,14 @@ bot = commands.Bot(command_prefix = settings['prefix'])
 
 @bot.event
 async def on_message(message):
+    
+    i_comm = "я коммунист"
+    
+    if i_comm in message.content:
+        if message.author.bot:
+            print ("bot")
+        else:
+            message.channel.send (message.author.mention, " лох ты а не коммунист")
 
     maxis = ["Макси", "макси", "макся", "Максимилиана", "максимиллиана", "МАКС", "Макся"]
     
