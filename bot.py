@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 from config import settings
 import os
+import random
 from discord.ext.commands import has_permissions, MissingPermissions
 
 bot = commands.Bot(command_prefix = settings['prefix'])
@@ -17,15 +18,24 @@ async def on_message(message):
         await message.delete ()
         await message.channel.send ("@everyone активим сучки")
     
-    i_comm = ["я коммунист", "Я КОММУНИСТ", "Я коммунист", "я Коммунист"]
+    messcont = message.content
+    messcontlowered = messcont.lower ()
+    i_comm = ["комм", "соц", "маркс", "ленин", "сталин"]
     
     if message.author.bot:
         print ("bot")
     else:
         for i in i_comm:
             if i in message.content:
-                await message.channel.send (message.author.mention + " лох ты а не коммунист")
-
+                randcount = random.randint (1, 3)
+                
+                if randcount == 1:
+                    await message.channel.send ("коммунизм пук")
+                else if randcount == 2:
+                    await message.channel.send ("СИЛЫ КОММУНИЗМА ПОБЕДЯТ")
+                else if randcount == 2:
+                    await message.channel.send ("да здравствует коммунистическая революция!")
+                
     maxis = ["Макси", "макси", "макся", "Максимилиана", "максимиллиана", "МАКС", "Макся"]
     
     if message.author.bot:
