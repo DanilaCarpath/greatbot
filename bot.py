@@ -31,9 +31,9 @@ async def on_message(message):
                 
                 if randcount == 1:
                     await message.channel.send ("коммунизм пук")
-                else if randcount == 2:
+                elif randcount == 2:
                     await message.channel.send ("СИЛЫ КОММУНИЗМА ПОБЕДЯТ")
-                else if randcount == 2:
+                elif randcount == 2:
                     await message.channel.send ("да здравствует коммунистическая революция!")
                 
     maxis = ["Макси", "макси", "макся", "Максимилиана", "максимиллиана", "МАКС", "Макся"]
