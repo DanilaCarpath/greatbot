@@ -10,7 +10,7 @@ bot = commands.Bot(command_prefix = settings['prefix'])
 @bot.event
 async def on_message(message):
     
-    if message.content == "suck":
+    if suck in message.content:
         
         await message.channel.send (message.author.mention + " fuck my ass")
     
