@@ -28,7 +28,7 @@ async def on_message(message):
     else:
         for i in i_comm:
             if i in messcontlowered:
-                randcount = random.randint (1, 3)
+                randcount = random.randint (1, 5)
                 
                 if randcount == 1:
                     await message.channel.send ("коммунизм пук")
