@@ -41,14 +41,14 @@ async def on_message(message):
                 elif randcount == 5:
                     await message.channel.send ("союз нерушимых республик свободных...")
                 
-    maxis = ["Макси", "макси", "макся", "Максимилиана", "максимиллиана", "МАКС", "Макся"]
+#     maxis = ["Макси", "макси", "макся", "Максимилиана", "максимиллиана", "МАКС", "Макся"]
     
-    if message.author.bot:
-        print ("bot")
-    else:
-        for i in maxis:
-            if i in message.content:
-                await message.channel.send ("Макси сосет хуй")
+#     if message.author.bot:
+#         print ("bot")
+#     else:
+#         for i in maxis:
+#             if i in message.content:
+#                 await message.channel.send ("Макси сосет хуй")
 
     
 
