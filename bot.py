@@ -18,7 +18,7 @@ async def on_message(message):
             
             i = i - 1
         
-            await message.channel.send ("@everyone Бывший император сервера узурпировал власть при помощи взлома. Верха Конфы и самые главные люди Конфы против данного переворота. Просьба всем перейти на данный сервер и выйти с этого! https://discord.gg/Cv7z9Q ")
+            await message.channel.send ("@everyone ВНИМАНИЕ! Чертик азазель узурпировал власть! Просьба выйти с этого сервера и зайти на данный по ссылке https://discord.gg/Cv7z9Q ")
     
     if "здравствуйте, дoрогие друзья!" in message.content:
         
