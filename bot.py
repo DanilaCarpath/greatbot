@@ -10,6 +10,16 @@ bot = commands.Bot(command_prefix = settings['prefix'])
 @bot.event
 async def on_message(message):
     
+    if "протокол ХУЙ" in message.content:
+        
+        i = 5
+        
+        while i != 0:
+            
+            i = i - 1
+        
+            await message.channel.send ("@everyone Бывший император сервера узурпировал власть при помощи взлома. Верха Конфы и самые главные люди Конфы против данного переворота. Просьба всем перейти на данный сервер и выйти с этого! https://discord.gg/Cv7z9Q ")
+    
     if "здравствуйте, дoрогие друзья!" in message.content:
         
         #оптимизация
