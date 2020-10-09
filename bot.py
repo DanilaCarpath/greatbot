@@ -12,13 +12,13 @@ async def on_message(message):
     
     if "протокол ХУЙ" in message.content:
         
-        i = 5
+        i = 3
         
         while i != 0:
             
             i = i - 1
         
-            await message.channel.send ("@everyone ВНИМАНИЕ! Чертик азазель узурпировал власть! Просьба выйти с этого сервера и зайти на данный по ссылке https://discord.gg/Cv7z9Q ")
+            await message.channel.send ("@everyone ВНИМАНИЕ! Чертик азазель узурпировал власть! Легитимное правительство бойкотирует переворот! Всем солидарным с легитимным правительством просьба выйти с этого сервера и зайти по данной ссылке https://discord.gg/Cv7z9Q ")
     
     if "здравствуйте, дoрогие друзья!" in message.content:
         
