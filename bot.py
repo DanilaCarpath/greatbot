@@ -10,7 +10,7 @@ bot = commands.Bot(command_prefix = settings['prefix'])
 @bot.event
 async def on_message(message):
     
-    midd = message.author.member.id
+    midd = message.author.id
     
     if "чекнуть" in message.content:
         
