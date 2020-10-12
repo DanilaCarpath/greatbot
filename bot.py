@@ -72,7 +72,7 @@ async def on_message(message):
     else:
         for i in louis:
             if i in message.content:
-                await message.channel.send (message.author.mention + " Луи? Луи ВЕЛИКИЙ БОГ и ЕБЫРЬ")
+                await message.channel.send (message.author.mention + " ЛУИ ВЕЛИЧАЙШИЙ БОГ И ЕБЫРЬ")
 
 
     
