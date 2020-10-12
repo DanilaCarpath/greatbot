@@ -79,9 +79,9 @@ async def on_message(message):
     else:
         for i in mihey:
             if i in mess:
-                randcount = random.randint (1, 3) - 1
+                randcount = random.randint (1, 5) - 1
                 
-                frazes = ["Анком мощь", "Я КОММ ШИЗОФРЕНИК", "я лгбт мальчик"]
+                frazes = ["Анком мощь", "Я КОММ ШИЗОФРЕНИК", "я лгбт мальчик", "Я либерал кста", "Я не либерал кста"]
                 
                 await message.channel.send (message.author.mention + "Ты сказал " + i  + "? " + frazes[randcount])
 
