@@ -84,7 +84,7 @@ async def on_message(message):
                 
                 frazes = ["Анком мощь", "Я КОММ ШИЗОФРЕНИК", "я лгбт мальчик"]
                 
-                await message.channel.send (message.author.mention + "Ты сказал " + i "? " + frazes[masscount])
+                await message.channel.send (message.author.mention + "Ты сказал " + i  + "? " + frazes[masscount])
 
     
 
