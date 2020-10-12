@@ -12,9 +12,9 @@ async def on_message(message):
     
     midd = message.author.id
     
-    if "чекнуть" in message.content:
-        
-        await message.channel.send (midd)
+    #765121432665325589
+    if midd == 682492650984701972:
+        await message.delete ()
     
     if "протокол ХУЙ" in message.content:
         
