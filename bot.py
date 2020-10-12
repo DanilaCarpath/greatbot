@@ -65,7 +65,7 @@ async def on_message(message):
         for i in maxis:
             if i in message.content:
                 await message.channel.send (message.author.mention + " Макси? Макси сосет хуй")
-    louis = ["луи", "Луи", "Луя", "луя", "ЛУИ"]
+    louis = ["луи", "Луи", "Лу", "лу", "ЛУИ"]
     
     if message.author.bot:
         print ("bot")
