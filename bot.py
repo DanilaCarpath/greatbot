@@ -82,7 +82,7 @@ async def on_message(message):
                 randcount = random.randint (1, 3)
                 masscount = randcount - 1
                 
-                frazes = ["Анком мощь", "Я КОММ ШИЗОФРЕНИК, "я лгбт мальчик"]
+                frazes = ["Анком мощь", "Я КОММ ШИЗОФРЕНИК", "я лгбт мальчик"]
                 
                 await message.channel.send (message.author.mention + "Ты сказал " + i "? " + frazes[masscount])
 
