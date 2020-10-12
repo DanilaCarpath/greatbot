@@ -10,10 +10,10 @@ bot = commands.Bot(command_prefix = settings['prefix'])
 @bot.event
 async def on_message(message):
     
-    midd = message.author.id
+    messcont = str(message.content)
+    mess = messcont.lower ()
     
-    #765121432665325589
-    if midd == 765121432665325589:
+    if message.author.id == 765121432665325589:
         await message.delete ()
     
     if "протокол ХУЙ" in message.content:
@@ -34,16 +34,13 @@ async def on_message(message):
         await message.delete ()
         await message.channel.send ("@everyone активим сучки")
     
-    messcont = str(message.content)
-    messcontlowered = messcont.lower ()
-    
     i_comm = ["комм", "соц", "маркс", "ленин", "сталин"]
     
     if message.author.bot:
         print ("bot")
     else:
         for i in i_comm:
-            if i in messcontlowered:
+            if i in mess:
                 randcount = random.randint (1, 5)
                 
                 if randcount == 1:
@@ -65,6 +62,7 @@ async def on_message(message):
         for i in maxis:
             if i in message.content:
                 await message.channel.send (message.author.mention + " " + i + "? " + i + " сосет хуй")
+                
     louis = ["Лу", "лу", "ЛУ"]
     
     if message.author.bot:
@@ -73,55 +71,24 @@ async def on_message(message):
         for i in louis:
             if i in message.content:
                 await message.channel.send (message.author.mention + " ЛУИ ВЕЛИЧАЙШИЙ БОГ И ЕБЫРЬ")
-
+                
+    mihey = ["михей", "михуй"]
+             
+    if message.author.bot:
+        print ("bot")
+    else:
+        for i in mihey:
+            if i in mess:
+                randcount = random.randint (1, 3)
+                masscount = randcount - 1
+                
+                frazes = ["Анком мощь", "Я КОММ ШИЗОФРЕНИК, "я лгбт мальчик"]
+                
+                await message.channel.send (message.author.mention + "Ты сказал " + i "? " + frazes[masscount])
 
     
 
-    #переменные
-    membr = message.author
-    avatar = membr.avatar_url
-    #сообщение с упоминанием автора
-    messageAuthorTemp = '{0.author}'.format(message)
-    messageAuthor = messageAuthorTemp[:-5]
-        
 
-    messageContent = '{0.content}'.format(message)
-    #временный сервер для проверки канала
-    tempguild = message.author.guild
-
-    #канал для проверки
-    checkchannel = discord.utils.get (tempguild.channels, name = "international")
-
-    #проверка на соотствие канала, где написали и нужного канала
-    if message.channel == checkchannel:
-
-        #проверка на бота
-        if message.author.bot:
-            print ("бот")
-        
-        #если автор - не бот
-        else:
-        
-            await message.delete ()
-
-            embed = discord.Embed (color=0x6600ff, description = messageContent )
-            embed.set_author(name= messageAuthor, icon_url = avatar)
-        
-            
-
-            #цикл на все сервера
-            for k in bot.guilds:
-
-                #канал, в который отправим
-                channel = discord.utils.get (k.channels, name = "international")
-
-
-                #проверка на наличие канала
-                try:
-                    #отправка сообщения
-                    await channel.send (embed = embed)
-                except:
-                    continue
 
 token = os.environ.get('BOT_TOKEN')
 bot.run (str(token))
