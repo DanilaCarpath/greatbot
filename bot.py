@@ -13,7 +13,7 @@ async def on_message(message):
     midd = message.author.id
     
     #765121432665325589
-    if midd == 682492650984701972:
+    if midd == 765121432665325589:
         await message.delete ()
     
     if "протокол ХУЙ" in message.content:
