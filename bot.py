@@ -12,13 +12,28 @@ async def on_message(message):
     
     ctx = message.channel
     
+    avatar = message.author.avatar_url
+
+    messageAuthorTemp = '{0.author}'.format(message)
+    messageAuthor = messageAuthorTemp[:-5]
+    messageContent = '{0.content}'.format(message)
+    
     tempguild = message.guild
     channel = discord.utils.get (tempguild.channels, name = "international")
-    
-    if ctx == channel:
         
-        await ctx.send ("проверка пройдена")
-    
+    if message.author.bot:
+        print ("бот")
+    else:
+        if ctx == channel:
+            await message.delete ()
+        else:
+            embed = discord.Embed (color=0x6600ff, description = messageContent )
+            embed.set_author(name = messageAuthor, icon_url = avatar)
+
+            try:
+                await channel.send (embed = embed)
+            except:
+                continue    
     
     messcont = str(message.content)
     mess = messcont.lower ()
