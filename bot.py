@@ -28,12 +28,13 @@ async def on_message(message):
             await message.delete ()
         else:
             embed = discord.Embed (color=0x6600ff, description = messageContent )
-            embed.set_author(name = messageAuthor, icon_url = avatar)
+            embed.set_author (name = messageAuthor, icon_url = avatar)
 
             try:
                 await channel.send (embed = embed)
+                print ("otpravilos")
             except:
-                print ("not international")
+                print ("oshibka")
     
     messcont = str(message.content)
     mess = messcont.lower ()
