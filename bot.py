@@ -33,7 +33,7 @@ async def on_message(message):
             try:
                 await channel.send (embed = embed)
             except:
-                continue    
+                print ("not international")
     
     messcont = str(message.content)
     mess = messcont.lower ()
