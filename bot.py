@@ -10,6 +10,7 @@ bot = commands.Bot(command_prefix = settings['prefix'])
 @bot.event
 async def on_message(message):
     
+    #алалал
     ctx = message.channel
     
     avatar = message.author.avatar_url
