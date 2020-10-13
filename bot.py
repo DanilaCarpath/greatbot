@@ -22,25 +22,22 @@ async def on_message(message):
     tempguild = message.guild
     channel = discord.utils.get (tempguild.channels, name = "international")
     
-    if isinstance (messageContent, unicode):
-        print ("or simvol")
+    if message.author.bot:
+        print ("бот")
     else:
-        if message.author.bot:
-            print ("бот")
-        else:
-            embed = discord.Embed (color=0x6600ff, description = messageContent )
-            embed.set_author (name = messageAuthor, icon_url = avatar)
+        embed = discord.Embed (color=0x6600ff, description = messageContent )
+        embed.set_author (name = messageAuthor, icon_url = avatar)
 
-            if ctx == channel:
-                await message.delete ()
+        if ctx == channel:
+            await message.delete ()
+            await channel.send (embed = embed)
+            print ("otpravilos")
+        else:
+            try:
                 await channel.send (embed = embed)
                 print ("otpravilos")
-            else:
-                try:
-                    await channel.send (embed = embed)
-                    print ("otpravilos")
-                except:
-                    print ("oshibka")
+            except:
+                print ("oshibka")
     
     messcont = str(message.content)
     mess = messcont.lower ()
