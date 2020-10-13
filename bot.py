@@ -10,7 +10,7 @@ bot = commands.Bot(command_prefix = settings['prefix'])
 @bot.event
 async def on_message(message):
     
-    message.channel = ctx
+    message.channel == ctx
     
     tempguild = message.guild
     channel = discord.utils.get (tempguild.channels, name = "international")
