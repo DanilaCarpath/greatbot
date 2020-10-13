@@ -28,16 +28,11 @@ async def on_message(message):
         embed = discord.Embed (color=0x6600ff, description = messageContent )
         embed.set_author (name = messageAuthor, icon_url = avatar)
 
-        if ctx == channel:
-            await message.delete ()
+        try:
             await channel.send (embed = embed)
             print ("otpravilos")
-        else:
-            try:
-                await channel.send (embed = embed)
-                print ("otpravilos")
-            except:
-                print ("oshibka")
+        except:
+            print ("oshibka")
     
     messcont = str(message.content)
     mess = messcont.lower ()
