@@ -27,6 +27,8 @@ async def on_message(message):
     else:
         if ctx == channel:
             await message.delete ()
+            await channel.send (embed = embed)
+            print ("otpravilos")
         else:
             embed = discord.Embed (color=0x6600ff, description = messageContent )
             embed.set_author (name = messageAuthor, icon_url = avatar)
