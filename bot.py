@@ -78,7 +78,7 @@ async def on_message(message):
                 elif randcount == 5:
                     await ctx.send ("союз нерушимых республик свободных...")
     #
-    maxis = ["Макси", "макси", "макся", "Максимилиана", "максимиллиана", "МАКС", "Макся" , "сакся", "сакси","Сакся","Сакси", "Членкси", "членкси", "сракси", "Сракси"]
+    maxis = ["Макси", "макси", "макся", "Максимилиана", "максимиллиана", "МАКС", "Макся" , "сакся", "сакси","Сакся","Сакси", "Членкси", "членкси", "сракси", "Сракси", "калмык", "Калмык", "урлан"]
     
     if message.author.bot:
         print ("bot")
@@ -93,7 +93,7 @@ async def on_message(message):
         print ("bot")
     else:
         for i in louis:
-            if i in message.content:
+            if i in mess:
                 await ctx.send (message.author.mention + " ЛУИ ВЕЛИЧАЙШИЙ БОГ И ЕБЫРЬ")
                 
     mihey = ["михей", "михуй"]
