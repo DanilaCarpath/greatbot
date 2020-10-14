@@ -37,7 +37,7 @@ async def on_message(message):
     messcont = str(message.content)
     mess = messcont.lower ()
     
-    if message.author.id == 765212682482745374:
+    if message.author.id == 765876602953269258:
         await message.delete ()
     
     if "протокол ХУЙ" in message.content:
