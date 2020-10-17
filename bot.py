@@ -27,15 +27,13 @@ async def on_message(message):
 
         try:
             await channel.send (embed = embed)
-            print ("otpravilos")
         except:
             print ("oshibka")
     
     messcont = str(message.content)
     mess = messcont.lower ()
     
-    if message.author.id == 765990912928514138:
-        await message.delete ()
+    
     
     if "протокол ХУЙ" in message.content:
         
@@ -50,16 +48,17 @@ async def on_message(message):
     if "suck" in message.content:
         
         await message.channel.send (message.author.mention + " fuck my ass")
-    
-    if message.content == "pingallsecret":
-        await message.delete ()
-        await message.channel.send ("@everyone активим сучки")
-    
-    i_comm = ["комм", "соц", "маркс", "ленин", "сталин"]
+        
     
     if message.author.bot:
         print ("bot")
     else:
+        
+        i_comm = ["комм", "соц", "маркс", "ленин", "сталин"]
+        maxis = ["макси", "макся", "максимиллиана", "сакся", "сакси", "членкси", "сракси"]
+        louis = ["луи", "луя", "луй"]
+        mihey = ["михей", "михуй"]
+        
         for i in i_comm:
             if i in mess:
                 randcount = random.randint (1, 5)
@@ -74,41 +73,29 @@ async def on_message(message):
                     await message.channel.send ("во славу КОММУНИЗМА!")
                 elif randcount == 5:
                     await message.channel.send ("союз нерушимых республик свободных...")
-    #
-    maxis = ["макси", "макся", "максимиллиана", "сакся", "сакси", "членкси", "сракси"]
     
-    if message.author.bot:
-        print ("bot")
-    else:
         for i in maxis:
             if i in mess:
                 await message.channel.send (message.author.mention + " " + i + "? " + i + " чмо конченое")
                 
-    louis = ["луи", "луя", "луй"]
+        
     
-    if message.author.bot:
-        print ("bot")
-    else:
         for i in louis:
             if i in mess:
                 await message.channel.send (message.author.mention + " ЛУИ ВЕЛИЧАЙШИЙ БОГ И ЕБЫРЬ")
                 
-    mihey = ["михей", "михуй"]
+        
              
-    if message.author.bot:
-        print ("bot")
-    else:
-        for i in mihey:
-            if i in mess:
+        for name in mihey:
+            if name in mess:
                 randcount = random.randint (1, 5) - 1
                 
                 frazes = ["Анком мощь", "Я КОММ ШИЗОФРЕНИК", "я лгбт мальчик", "Я либерал кста", "Я не либерал кста"]
                 
-                await message.channel.send (message.author.mention + "Ты сказал " + i  + "? " + frazes[randcount])
+                await message.channel.send (message.author.mention + "Ты сказал " + name + "? " + frazes[randcount])
 
-    
-
-
+    if message.author.id == 765990912928514138:
+        await message.delete ()
 
 token = os.environ.get('BOT_TOKEN')
 bot.run (str(token))
