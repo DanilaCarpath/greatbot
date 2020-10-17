@@ -9,17 +9,7 @@ bot = commands.Bot(command_prefix = settings['prefix'])
 
 @bot.event
 async def on_message(message):
-    
-    
-    
-    if message.author.bot:
-        
-        print ("бот")
-        
-    else:
-        
-        
-    
+          
     messcont = str(message.content)
     mess = messcont.lower () 
     
