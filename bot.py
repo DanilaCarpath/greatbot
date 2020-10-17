@@ -69,7 +69,7 @@ async def on_message(message):
                 await message.channel.send (message.author.mention + " ЛУИ ВЕЛИЧАЙШИЙ БОГ И ЕБЫРЬ")
         
         #цикл детекта по листам МАКСИ
-        for i in maxis:
+        for name in maxis:
             
             if name in mess:
                 
