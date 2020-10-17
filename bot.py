@@ -10,9 +10,6 @@ bot = commands.Bot(command_prefix = settings['prefix'])
 @bot.event
 async def on_message(message):
     
-    #алалал
-    ctx = message.channel
-    
     avatar = message.author.avatar_url
 
     messageAuthorTemp = '{0.author}'.format(message)
@@ -52,11 +49,11 @@ async def on_message(message):
     
     if "suck" in message.content:
         
-        await ctx.send (message.author.mention + " fuck my ass")
+        await message.channel.send (message.author.mention + " fuck my ass")
     
     if message.content == "pingallsecret":
         await message.delete ()
-        await ctx.send ("@everyone активим сучки")
+        await message.channel.send ("@everyone активим сучки")
     
     i_comm = ["комм", "соц", "маркс", "ленин", "сталин"]
     
@@ -68,15 +65,15 @@ async def on_message(message):
                 randcount = random.randint (1, 5)
                 
                 if randcount == 1:
-                    await ctx.send ("коммунизм пук")
+                    await message.channel.send ("коммунизм пук")
                 elif randcount == 2:
-                    await ctx.send ("СИЛЫ КОММУНИЗМА ПОБЕДЯТ")
+                    await message.channel.send ("СИЛЫ КОММУНИЗМА ПОБЕДЯТ")
                 elif randcount == 3:
-                    await ctx.send ("да здравствует коммунистическая революция!")
+                    await message.channel.send ("да здравствует коммунистическая революция!")
                 elif randcount == 4:
-                    await ctx.send ("во славу КОММУНИЗМА!")
+                    await message.channel.send ("во славу КОММУНИЗМА!")
                 elif randcount == 5:
-                    await ctx.send ("союз нерушимых республик свободных...")
+                    await message.channel.send ("союз нерушимых республик свободных...")
     #
     maxis = ["макси", "макся", "максимиллиана", "сакся", "сакси", "членкси", "сракси"]
     
@@ -85,7 +82,7 @@ async def on_message(message):
     else:
         for i in maxis:
             if i in mess:
-                await ctx.send (message.author.mention + " " + i + "? " + i + " чмо конченое")
+                await message.channel.send (message.author.mention + " " + i + "? " + i + " чмо конченое")
                 
     louis = ["луи", "луя", "луй"]
     
@@ -94,7 +91,7 @@ async def on_message(message):
     else:
         for i in louis:
             if i in mess:
-                await ctx.send (message.author.mention + " ЛУИ ВЕЛИЧАЙШИЙ БОГ И ЕБЫРЬ")
+                await message.channel.send (message.author.mention + " ЛУИ ВЕЛИЧАЙШИЙ БОГ И ЕБЫРЬ")
                 
     mihey = ["михей", "михуй"]
              
@@ -107,7 +104,7 @@ async def on_message(message):
                 
                 frazes = ["Анком мощь", "Я КОММ ШИЗОФРЕНИК", "я лгбт мальчик", "Я либерал кста", "Я не либерал кста"]
                 
-                await ctx.send (message.author.mention + "Ты сказал " + i  + "? " + frazes[randcount])
+                await message.channel.send (message.author.mention + "Ты сказал " + i  + "? " + frazes[randcount])
 
     
 
