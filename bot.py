@@ -14,26 +14,29 @@ async def on_message(message):
 
     messageAuthorTemp = '{0.author}'.format(message)
     messageAuthor = messageAuthorTemp[:-5]
-    messageContent = '{0.content}'.format(message)
     
     tempguild = message.guild
     channel = discord.utils.get (tempguild.channels, name = "international")
     
     if message.author.bot:
+        
         print ("бот")
+        
     else:
-        embed = discord.Embed (color=0x6600ff, description = messageContent )
+        
+        embed = discord.Embed (color=0x6600ff, description = message.content )
         embed.set_author (name = messageAuthor, icon_url = avatar)
 
         try:
+            
             await channel.send (embed = embed)
+            
         except:
+            
             print ("oshibka")
     
     messcont = str(message.content)
     mess = messcont.lower ()
-    
-    
     
     if "протокол ХУЙ" in message.content:
         
