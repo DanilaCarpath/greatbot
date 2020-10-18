@@ -86,7 +86,7 @@ async def on_message(message):
                 
                 await message.channel.send (message.author.mention + "Ты сказал " + name + "? " + frazes[randcount])
 
-    if message.author.id == 765990912928514138:
+    if message.author.id == 767411136035160064:
         await message.delete ()
 
 token = os.environ.get('BOT_TOKEN')
