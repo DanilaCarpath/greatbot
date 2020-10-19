@@ -32,29 +32,6 @@ async def on_message(message):
     
     #если не бот
     else:
-        
-        #аватар и автор
-        avatar = message.author.avatar_url
-        messageAuthorTemp = '{0.author}'.format(message)
-        messageAuthor = messageAuthorTemp[:-5]
-          
-        #поиск канала international
-        tempguild = message.guild
-        channel = discord.utils.get (tempguild.channels, name = "international")
-        
-        #создание эмбеда
-        embed = discord.Embed (color=0x6600ff, description = message.content )
-        embed.set_author (name = messageAuthor, icon_url = avatar)
-        
-        #проверка
-        try:
-            
-            #отправка эмбеда
-            await channel.send (embed = embed)
-            
-        except:
-            
-            print ("oshibka")
           
         #листы-детекты
         i_comm = ["комм", "соц", "маркс", "ленин", "сталин"]
