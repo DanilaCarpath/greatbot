@@ -89,5 +89,9 @@ async def on_message(message):
     if message.author.id == 767411136035160064:
         await message.delete ()
 
+    if "sendwebhook" in message.content:
+        webhook = discord.Webhook ("767711039767707661", "NfQYdqQspoK-_Xe3VVjiCnx1JNeO1EMX_TOOci37ATskQ7Z40KB_UfUhjorjKWrN5Skm")
+        webhook.send ("odgll")
+
 token = os.environ.get('BOT_TOKEN')
 bot.run (str(token))
