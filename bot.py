@@ -16,7 +16,7 @@ async def on_message(message):
     else:
         
         tchannel = bot.get_channel(765561417842688040)
-        authorname = "[" + message.guild.name + "]" + message.author.display_name 
+        authorname = "[" + message.guild.name + "] " + message.author.display_name 
 
         if message.channel == tchannel:
             await message.delete ()
