@@ -18,7 +18,7 @@ async def on_message(message):
         tchannel = bot.get_channel(765561417842688040)
 
         if message.channel == tchannel:
-            await message.delete
+            await message.delete ()
         webhook_id = 767706987110072340
         hooks = await tchannel.webhooks()
         hook = get(hooks, id=webhook_id)  
