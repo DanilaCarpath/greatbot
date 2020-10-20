@@ -24,9 +24,7 @@ async def on_message(message):
         hooks = await tchannel.webhooks()
         hook = get(hooks, id=webhook_id)  
         if "@everyone" in message.content:
-            messagecontentupgrade = message.content - "@everyone":
-            await hook.send(content=messagecontentupgrade, username=authorname, 
-                        avatar_url=message.author.avatar_url)
+            print("everyone")
         else:
             await hook.send(content=message.content, username=authorname, 
                         avatar_url=message.author.avatar_url)
