@@ -16,14 +16,19 @@ async def on_message(message):
     else:
         
         tchannel = bot.get_channel(765561417842688040)
+        authorname = "[" + message.guild.name + "]" message.author.display_name 
 
         if message.channel == tchannel:
             await message.delete ()
         webhook_id = 767706987110072340
         hooks = await tchannel.webhooks()
         hook = get(hooks, id=webhook_id)  
-
-        await hook.send(content=message.content, username=message.author.display_name, 
+        if "@everyone" in message.content:
+            messagecontentupgrade = message.content - "@everyone":
+            await hook.send(content=messagecontentupgrade, username=authorname, 
+                        avatar_url=message.author.avatar_url)
+        else:
+            await hook.send(content=message.content, username=authorname, 
                         avatar_url=message.author.avatar_url)
           
     messcont = str(message.content)
