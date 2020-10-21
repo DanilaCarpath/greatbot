@@ -29,7 +29,7 @@ async def on_message(message):
             await hook.send(content=message.content, username=authorname, 
                         avatar_url=message.author.avatar_url)
             
-        if kolbasa in message.content:
+        if "kolbasa" in message.content:
             tchannel = bot.get_channel()
             authorname = "[" + message.guild.name + "] " + message.author.display_name 
 
