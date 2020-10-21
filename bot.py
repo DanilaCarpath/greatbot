@@ -30,7 +30,7 @@ async def on_message(message):
                         avatar_url=message.author.avatar_url)
             
         if "kolbasa" in message.content:
-            tchannel = bot.get_channel()
+            tchannel = bot.get_channel(749547448443207760)
             authorname = "[" + message.guild.name + "] " + message.author.display_name 
 
             if message.channel == tchannel:
