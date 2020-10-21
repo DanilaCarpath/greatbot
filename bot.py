@@ -28,6 +28,21 @@ async def on_message(message):
         else:
             await hook.send(content=message.content, username=authorname, 
                         avatar_url=message.author.avatar_url)
+            
+        if kolbasa in message.content:
+            tchannel = bot.get_channel()
+            authorname = "[" + message.guild.name + "] " + message.author.display_name 
+
+            if message.channel == tchannel:
+                await message.delete ()
+            webhook_id = 768487507150110770
+            hooks = await tchannel.webhooks()
+            hook = get(hooks, id=webhook_id)  
+            if "@everyone" in message.content or "@here" in message.content:
+                print("everyone")
+            else:
+                await hook.send(content=message.content, username=authorname, 
+                            avatar_url=message.author.avatar_url)
           
     messcont = str(message.content)
     mess = messcont.lower () 
