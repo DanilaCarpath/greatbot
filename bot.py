@@ -23,7 +23,7 @@ async def on_message(message):
         webhook_id = 767706987110072340
         hooks = await tchannel.webhooks()
         hook = get(hooks, id=webhook_id)  
-        if "@everyone" in message.content:
+        if "@everyone" in message.content or "@here" in message.content:
             print("everyone")
         else:
             await hook.send(content=message.content, username=authorname, 
