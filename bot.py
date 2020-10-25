@@ -60,6 +60,7 @@ async def on_message(message):
         maxis = ["макси", "макся", "максимиллиана", "сакся", "сакси", "членкси", "сракси", "рун", "хламер"]
         louis = ["луи", "луя", "луй"]
         mihey = ["михей", "михуй"]
+        toby = ["тоби", "инк", "тюбик"]
         
         #цикл детекта по листам КОММУНИЗМ
         for i in i_comm:
@@ -72,6 +73,10 @@ async def on_message(message):
                 
                 await message.channel.send (frazes[randcount])
         
+        for name in toby:
+            
+            if name in mess::
+                await message.channel.send (message.author.mention + " " + name + " ВЕЛИКИЙ ЧИМС")
         #цикл детекта по листам ЛУИ
         for name in louis:
             
