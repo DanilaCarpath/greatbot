@@ -75,7 +75,7 @@ async def on_message(message):
         
         for name in toby:
             
-            if name in mess::
+            if name in mess:
                 await message.channel.send (message.author.mention + " " + name + " ВЕЛИКИЙ ЧИМС")
         #цикл детекта по листам ЛУИ
         for name in louis:
